@@ -1,6 +1,6 @@
 # JSON Schema with Spring Kafka and Confluent Schema Registry
 
-This is the sample project to accompany the similarly titled [blogpost on The Coding Interface]().
+This is the sample project to accompany the similarly titled [blogpost on The Coding Interface](https://thecodinginterface.com/blog/json-schema-and-confluent-schema-registry/).
 
 ### Running Locally
 
