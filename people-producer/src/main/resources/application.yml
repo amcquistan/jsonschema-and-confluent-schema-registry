@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: "people-producer"
+
+  kafka:
+    bootstrap-servers: "localhost:9092"
+    properties:
+      schema:
+        registry:
+          url: "http://localhost:8081"
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: io.confluent.kafka.serializers.json.KafkaJsonSchemaSerializer
+
+
+server:
+  port: 8080
+
+kafka-topics:
+  people:
+    name: "people.json-schema"
+    partitions: 3
+    replicas: 1

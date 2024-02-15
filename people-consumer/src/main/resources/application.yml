@@ -1,0 +1,28 @@
+spring:
+  application:
+    name: "people-consumer"
+
+  kafka:
+    bootstrap-servers: "localhost:9092"
+    properties:
+      schema:
+        registry:
+          url: "http://localhost:8081"
+    consumer:
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: io.confluent.kafka.serializers.json.KafkaJsonSchemaDeserializer
+      auto-offset-reset: earliest
+      properties:
+        json:
+          value:
+            type: com.fasterxml.jackson.databind.JsonNode
+
+server:
+  port: 8090
+
+kafka-topics:
+  people:
+    name: "people.json-schema"
+    partitions: 3
+    replicas: 1
+
